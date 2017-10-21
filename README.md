@@ -1,22 +1,22 @@
 Working plan
 
-1)	Start unity project					v
-2)	Making small map (boxes)				x
-3)	Making 4 characters walking through the map		x
-4)	Switching between characters				x
-5)	Camera switching					x
-6)	Characters follow + stay				x
-7)	Enemies 						x
-8)	Weapons 						x
-9)	Health							x
-10)	Damage 							x
-11)	UI							x
-12)	Inventory 						x
-13)	Items (pick up) 					x
-14)	Syndicate Panel						x
-15)	Menu 							x
-16)	Easter egg 						x
-17)	Extra: Making research for new weapons			x
-18)	Extra: More levels 					x
-19)	Extra: advance Syndicate Panel				x
-20)	Extra: Better menu					x
+1)	Start unity project (DONE)				            
+2)	Making small map (boxes)				
+3)	Making 4 characters walking through the map		
+4)	Switching between characters				
+5)	Camera switching					
+6)	Characters follow + stay				
+7)	Enemies 						
+8)	Weapons 						
+9)	Health							
+10)	Damage 							
+11)	UI							
+12)	Inventory 						
+13)	Items (pick up) 					
+14)	Syndicate Panel						
+15)	Menu 							
+16)	Easter egg 						
+17)	Extra: Making research for new weapons			
+18)	Extra: More levels 					
+19)	Extra: advance Syndicate Panel				
+20)	Extra: Better menu					
