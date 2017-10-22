@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class SCR_VisualCharacter : MonoBehaviour {
+public class SCR_VisualCharacter : MonoBehaviour
+{
 
-	// Use this for initialization
+    // Use this for initialization
     public SCR_Character Character;
+
     private GameObject _text;
     private bool _isSelected = false;
+    private GameObject _walkingPoints;
+    private bool _group = true;
 
     public bool IsSelected
     {
@@ -19,6 +23,7 @@ public class SCR_VisualCharacter : MonoBehaviour {
             {
                 //Making selected player text mesh yellow to see who is selected
                 _text.GetComponent<TextMesh>().color = value ? Color.yellow : Color.red;
+
             }
             _isSelected = value;
         }
@@ -27,28 +32,17 @@ public class SCR_VisualCharacter : MonoBehaviour {
 
     void Start()
     {
+        AddTextMesh();
         gameObject.AddComponent<NavMeshAgent>();
-
-        //Adding text above player with id number
-        _text = new GameObject();
-        _text.AddComponent<TextMesh>();
-        _text.GetComponent<TextMesh>().text = (Character.Id).ToString();
-        _text.GetComponent<TextMesh>().color = Color.red;
-        _text.transform.position = transform.position;
-        _text.transform.position = new Vector3(transform.position.x, transform.position.y+2.5f, transform.position.z);
-        // Rotate 180 degree to face camere on the correct angle
-        _text.transform.Rotate(0,180,0);
-        _text.transform.parent = gameObject.transform;
-
-
+        gameObject.AddComponent<SCR_MoveCharacter>();
 
     }
 
     void Update()
     {
-        PickNewWalkingLocation();
+
         TextFacingCamera();
-        
+
     }
 
     private void TextFacingCamera()
@@ -61,19 +55,22 @@ public class SCR_VisualCharacter : MonoBehaviour {
         _text.transform.Rotate(0, 180, 0);
     }
 
-    private void PickNewWalkingLocation()
+    private void AddTextMesh()
     {
-        //Pick a location where the players walk to
-        if (Input.GetMouseButtonDown(0))
-        {
-            RaycastHit hit;
 
-            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100))
-            {
-                GetComponent<NavMeshAgent>().destination = hit.point;
-            }
-        }
+        //Adding text above player with id number
+        _text = new GameObject();
+        _text.AddComponent<TextMesh>();
+        _text.GetComponent<TextMesh>().text = (Character.Id).ToString();
+        _text.GetComponent<TextMesh>().color = _isSelected ? Color.yellow : Color.red;
+        _text.transform.position = transform.position;
+        _text.transform.position = new Vector3(transform.position.x, transform.position.y + 2.5f, transform.position.z);
+        // Rotate 180 degree to face camere on the correct angle
+        _text.transform.Rotate(0, 180, 0);
+        _text.transform.parent = gameObject.transform;
     }
 
-  
 }
+
+
+

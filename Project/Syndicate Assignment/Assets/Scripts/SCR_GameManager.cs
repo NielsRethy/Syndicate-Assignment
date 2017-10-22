@@ -21,5 +21,6 @@ public class SCR_GameManager : MonoBehaviour
 	    {
 	        _characterManager.ChangeSelectedCharacter();
         }
-	}
+	    _characterManager.CameraFollowSelectedCharacter();
+    }
 }

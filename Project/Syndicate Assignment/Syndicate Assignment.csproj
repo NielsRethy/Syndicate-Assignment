@@ -224,6 +224,7 @@
     <Compile Include="Assets\Scripts\SCR_Character.cs" />
     <Compile Include="Assets\Scripts\SCR_CharacterManager.cs" />
     <Compile Include="Assets\Scripts\SCR_GameManager.cs" />
+    <Compile Include="Assets\Scripts\SCR_MoveCharacter.cs" />
     <Compile Include="Assets\Scripts\SCR_VisualCharacter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

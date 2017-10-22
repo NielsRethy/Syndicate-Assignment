@@ -336,6 +336,14 @@ Prefab:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4033895723806028, guid: 0c4c88c89b0a5fe468d8df7c341aca53, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -29.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033895723806028, guid: 0c4c88c89b0a5fe468d8df7c341aca53, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 18.17
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0c4c88c89b0a5fe468d8df7c341aca53, type: 2}
   m_IsPrefabParent: 0
@@ -638,8 +646,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 12
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -660,13 +668,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1494251018}
-  m_LocalRotation: {x: 0.36074433, y: -0, z: -0, w: 0.9326648}
-  m_LocalPosition: {x: 5.5, y: 53.2, z: -51}
+  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
+  m_LocalPosition: {x: 12.36, y: 63.92, z: -44.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 42.292004, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!1 &1533969144 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1396903209579536, guid: 0c4c88c89b0a5fe468d8df7c341aca53,

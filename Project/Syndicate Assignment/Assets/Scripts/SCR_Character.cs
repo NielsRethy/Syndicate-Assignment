@@ -40,37 +40,11 @@ public class SCR_Character {
         // Spawn player 
         GameObject capsuleObject = GameObject.CreatePrimitive(PrimitiveType.Capsule);
 
-        capsuleObject.transform.position = SwitchSpawnPosition(_id, capsuleObject);
+        capsuleObject.transform.position = GameObject.FindWithTag("Startlocation").transform.GetComponentsInChildren<Transform>()[_id].position;
         VisualCharacter = capsuleObject.AddComponent<SCR_VisualCharacter>();
         VisualCharacter.IsSelected = selected;
         VisualCharacter.Character = this;
         _isSelected = selected;
-    }
-
-    private Vector3 SwitchSpawnPosition(int id, GameObject character)
-    {
-        //Changing start position, they start in a square formation 
-        //  (P1) (P2)
-        //  (P3) (P4)
-
-        Vector3 startPos = GameObject.FindWithTag("Startlocation").transform.position;
-        switch (id)
-        {
-            case 2:
-                startPos = new Vector3(startPos.x + character.GetComponent<Collider>().bounds.size.x, startPos.y, startPos.z);
-                break;
-            case 3:
-                startPos = new Vector3(startPos.x , startPos.y, startPos.z + character.GetComponent<Collider>().bounds.size.z);
-                break;
-            case 4:
-                startPos = new Vector3(startPos.x + character.GetComponent<Collider>().bounds.size.x, startPos.y, startPos.z + character.GetComponent<Collider>().bounds.size.z);
-                break;
-            default:
-                startPos = GameObject.FindWithTag("Startlocation").transform.position;
-                return startPos;
-                break;
-        }
-        return startPos;
     }
 
 }
