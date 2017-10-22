@@ -14,9 +14,8 @@ Working plan
 12)	Inventory 						
 13)	Items (pick up) 					
 14)	Syndicate Panel						
-15)	Menu 							
-16)	Easter egg 						
-17)	Extra: Making research for new weapons			
-18)	Extra: More levels 					
-19)	Extra: advance Syndicate Panel				
-20)	Extra: Better menu					
+15)	Menu 													
+16)	Extra: Making research for new weapons			
+17)	Extra: More levels 					
+18)	Extra: advance Syndicate Panel				
+19)	Extra: Better menu					
