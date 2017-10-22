@@ -2,7 +2,7 @@ Working plan
 
 1)	Start unity project (DONE)				            
 2)	Making small map (DONE)				
-3)	Making 4 characters walking through the map		
+3)	Making 4 characters walking through the map (DONE)	
 4)	Switching between characters				
 5)	Camera switching					
 6)	Characters follow + stay				
