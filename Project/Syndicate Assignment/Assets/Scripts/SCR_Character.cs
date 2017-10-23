@@ -7,6 +7,9 @@ public class SCR_Character {
 	// Use this for initialization
 
     private string _name;
+    public int ATTStats;
+    private SCR_Weapon _activeWeapon;
+
     private bool _isSelected;
     private int _id;
 
@@ -14,6 +17,7 @@ public class SCR_Character {
     {
         _name = name;
         _id = id;
+
     }
 
     public bool IsSelected
@@ -27,12 +31,22 @@ public class SCR_Character {
     }
 
 
-    public SCR_VisualCharacter VisualCharacter { get; set; }
+    public SCR_VisualCharacter VisualCharacter { get; set ; }
 
     public int Id
     {
         get { return _id; }
         set { _id = value; }
+    }
+
+    public SCR_Weapon ActiveWeapon
+    {
+        get { return _activeWeapon; }
+        set
+        {
+            _activeWeapon = value;
+            //VisualCharacter.AddWeapon();
+        }
     }
 
     public void Initialize(bool selected)
@@ -46,5 +60,7 @@ public class SCR_Character {
         VisualCharacter.Character = this;
         _isSelected = selected;
     }
+
+   
 
 }

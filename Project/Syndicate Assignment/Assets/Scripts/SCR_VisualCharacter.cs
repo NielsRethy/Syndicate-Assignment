@@ -35,6 +35,7 @@ public class SCR_VisualCharacter : MonoBehaviour
         AddTextMesh();
         gameObject.AddComponent<NavMeshAgent>();
         gameObject.AddComponent<SCR_MoveCharacter>();
+        AddWeapon(new SCR_HandGun());
 
     }
 
@@ -68,6 +69,12 @@ public class SCR_VisualCharacter : MonoBehaviour
         // Rotate 180 degree to face camere on the correct angle
         _text.transform.Rotate(0, 180, 0);
         _text.transform.parent = gameObject.transform;
+    }
+    public void AddWeapon(SCR_Weapon gun)
+    {
+        gameObject.AddComponent<SCR_WeaponVisual>();
+        gameObject.GetComponent<SCR_WeaponVisual>().FileLocation = gun.WeaponLocation;
+        gameObject.GetComponent<SCR_WeaponVisual>().Weapon = gun;
     }
 
 }
