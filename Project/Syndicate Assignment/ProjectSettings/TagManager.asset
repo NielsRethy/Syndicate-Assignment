@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Startlocation
+  - StartlocationEnemy
+  - Enemy
   layers:
   - Default
   - TransparentFX

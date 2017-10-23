@@ -219,17 +219,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\SCR_Character.cs" />
-    <Compile Include="Assets\Scripts\SCR_CharacterManager.cs" />
-    <Compile Include="Assets\Scripts\SCR_GameManager.cs" />
-    <Compile Include="Assets\Scripts\SCR_HandGun.cs" />
-    <Compile Include="Assets\Scripts\SCR_Item.cs" />
-    <Compile Include="Assets\Scripts\SCR_MoveCharacter.cs" />
-    <Compile Include="Assets\Scripts\SCR_Persuader.cs" />
-    <Compile Include="Assets\Scripts\SCR_Rifle.cs" />
-    <Compile Include="Assets\Scripts\SCR_VisualCharacter.cs" />
-    <Compile Include="Assets\Scripts\SCR_Weapon.cs" />
-    <Compile Include="Assets\Scripts\SCR_WeaponVisual.cs" />
+    <Compile Include="Assets\Scripts\Character + enemy\SCR_Character.cs" />
+    <Compile Include="Assets\Scripts\Character + enemy\SCR_Enemy.cs" />
+    <Compile Include="Assets\Scripts\Character + enemy\SCR_MoveCharacter.cs" />
+    <Compile Include="Assets\Scripts\Character + enemy\SCR_VisualCharacter.cs" />
+    <Compile Include="Assets\Scripts\Character + enemy\SCR_VisualEnemy.cs" />
+    <Compile Include="Assets\Scripts\Items\SCR_HandGun.cs" />
+    <Compile Include="Assets\Scripts\Items\SCR_Item.cs" />
+    <Compile Include="Assets\Scripts\Items\SCR_Persuader.cs" />
+    <Compile Include="Assets\Scripts\Items\SCR_Rifle.cs" />
+    <Compile Include="Assets\Scripts\Items\SCR_Weapon.cs" />
+    <Compile Include="Assets\Scripts\Items\SCR_WeaponVisual.cs" />
+    <Compile Include="Assets\Scripts\Managers\SCR_CharacterManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\SCR_EnemyManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\SCR_GameManager.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
