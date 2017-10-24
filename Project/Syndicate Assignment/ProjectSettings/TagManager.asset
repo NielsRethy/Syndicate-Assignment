@@ -7,6 +7,13 @@ TagManager:
   - Startlocation
   - StartlocationEnemy
   - Enemy
+  - Ground
+  - GunPLayer1UI
+  - GunPLayer2UI
+  - GunPLayer3UI
+  - GunPLayer4UI
+  - HUD
+  - Character
   layers:
   - Default
   - TransparentFX

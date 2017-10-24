@@ -10,7 +10,7 @@ Working plan
 8)	Weapons (WORKING ON)						
 9)	Health							
 10)	Damage 	(WORKING ON)						
-11)	UI							
+11)	UI	(DONE)						
 12)	Inventory 						
 13)	Items (pick up) (WORKING ON)					
 14)	Syndicate Panel																			

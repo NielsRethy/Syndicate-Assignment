@@ -11,7 +11,7 @@ public abstract class SCR_Item {
     }
                 
     public ItemType _pickupObject;
-    private int _amount;        
+    //private int _amount;        
 
     public SCR_Item()
     {

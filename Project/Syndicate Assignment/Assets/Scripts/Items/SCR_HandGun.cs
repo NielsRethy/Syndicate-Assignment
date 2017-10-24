@@ -9,11 +9,12 @@ public class SCR_HandGun : SCR_Weapon
     public SCR_HandGun()
     {
         ATTStatsIncrease = 10;
-        RateOfFire = 1;
-        Reload = 10;
-        WeaponLocation = "Models/Guns/PREF_HandGun";
+        WeaponFileLocation = "Models/Guns/PREF_HandGun";
+        WeaponFileIconLocation = "Textures/HandGun";
         Weapon = GunType.Gun;
         Damage = 20;
+        Bullets = 0;
+        MaxBullets = 12;
     }
 
     public override void PickUp(SCR_Character ch)

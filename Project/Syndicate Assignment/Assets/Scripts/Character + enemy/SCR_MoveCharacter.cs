@@ -43,7 +43,11 @@ public class SCR_MoveCharacter : MonoBehaviour {
                 RaycastHit hit;
                 if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100))
                 {
-                    GetComponent<NavMeshAgent>().destination = hit.point;
+                    if (hit.transform.tag == "Ground")
+                    {
+                        GetComponent<NavMeshAgent>().destination = hit.point;
+                    }
+                   
                 }
             }
         }

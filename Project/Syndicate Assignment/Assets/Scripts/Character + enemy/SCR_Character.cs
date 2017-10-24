@@ -9,6 +9,7 @@ public class SCR_Character {
     private string _name;
     public int ATTStats;
     private SCR_Weapon _activeWeapon;
+    public List<SCR_Weapon> WeaponList = new List<SCR_Weapon>();
 
     private bool _isSelected;
     private int _id;
@@ -20,6 +21,7 @@ public class SCR_Character {
 
          // Spawn player 
         GameObject capsuleObject = GameObject.CreatePrimitive(PrimitiveType.Capsule);
+        capsuleObject.tag = "Character";
         capsuleObject.transform.position = GameObject.FindWithTag("Startlocation").transform.GetComponentsInChildren<Transform>()[_id].position;
         VisualCharacter = capsuleObject.AddComponent<SCR_VisualCharacter>();
         VisualCharacter.Character = this;

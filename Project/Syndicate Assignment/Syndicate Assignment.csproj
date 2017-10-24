@@ -224,6 +224,8 @@
     <Compile Include="Assets\Scripts\Character + enemy\SCR_MoveCharacter.cs" />
     <Compile Include="Assets\Scripts\Character + enemy\SCR_VisualCharacter.cs" />
     <Compile Include="Assets\Scripts\Character + enemy\SCR_VisualEnemy.cs" />
+    <Compile Include="Assets\Scripts\HUD + Panels\SCR_HUD.cs" />
+    <Compile Include="Assets\Scripts\Items\SCR_BulletPickUp.cs" />
     <Compile Include="Assets\Scripts\Items\SCR_HandGun.cs" />
     <Compile Include="Assets\Scripts\Items\SCR_Item.cs" />
     <Compile Include="Assets\Scripts\Items\SCR_Persuader.cs" />

@@ -8,11 +8,12 @@ public class SCR_Rifle : SCR_Weapon
     public SCR_Rifle()
     {
         ATTStatsIncrease = 10;
-        RateOfFire = 1;
-        Reload = 10;
-        WeaponLocation = "Models/Guns/PREF_Rifle";
+        WeaponFileLocation = "Models/Guns/PREF_Rifle";
+        WeaponFileIconLocation = "Textures/Rifle";
         Weapon = GunType.Rifle;
         Damage = 100;
+        Bullets = 0;
+        MaxBullets = 2;
     }
 
     public override void PickUp(SCR_Character ch)

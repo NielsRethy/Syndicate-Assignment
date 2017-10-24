@@ -11,7 +11,7 @@ public class SCR_VisualEnemy : MonoBehaviour {
         //adding components to enemy
 	    gameObject.AddComponent<BoxCollider>();
 	    gameObject.AddComponent<Rigidbody>();
-	    gameObject.GetComponent<MeshRenderer>().material.color= Color.red;
+	    gameObject.GetComponent<MeshRenderer>().material.color= Color.blue;
 	    gameObject.tag = "Enemy";
 	}
 	
@@ -22,6 +22,7 @@ public class SCR_VisualEnemy : MonoBehaviour {
 
     public void Hit(int damage)
     {
+        StartCoroutine(ChangeColorWhenHit());
         //If the enemy is hit , take damage
         if (Enemy.Health <= 0.0f)
         {
@@ -29,8 +30,15 @@ public class SCR_VisualEnemy : MonoBehaviour {
         }
         else
         {
+            
             Enemy.Health -= damage;
         }
     }
-
+    IEnumerator ChangeColorWhenHit()
+    {
+            GetComponent<Renderer>().material.color = Color.red;
+            yield return new WaitForSeconds(.1f);
+            GetComponent<Renderer>().material.color = Color.blue;
+            yield return new WaitForSeconds(.1f);   
+    }
 }

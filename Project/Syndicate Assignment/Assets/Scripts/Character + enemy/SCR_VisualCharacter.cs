@@ -10,8 +10,7 @@ public class SCR_VisualCharacter : MonoBehaviour
 
     private GameObject _text;
     private bool _isSelected = false;
-    private GameObject _walkingPoint;
-    private bool _group = true;
+ 
 
     public bool IsSelected
     {
@@ -35,7 +34,11 @@ public class SCR_VisualCharacter : MonoBehaviour
         AddTextMesh();
         gameObject.AddComponent<NavMeshAgent>();
         gameObject.AddComponent<SCR_MoveCharacter>();
-        AddWeapon(new SCR_HandGun());
+
+        Character.WeaponList.Add(new SCR_HandGun());
+        Character.WeaponList.Add(new SCR_Persuader());
+
+        SetWeaponActive(Character.WeaponList[0]);
 
     }
 
@@ -69,12 +72,13 @@ public class SCR_VisualCharacter : MonoBehaviour
         _text.transform.Rotate(0, 180, 0);
         _text.transform.parent = gameObject.transform;
     }
-    public void AddWeapon(SCR_Weapon gun)
+    public void SetWeaponActive(SCR_Weapon gun)
     {
         //adding weapon to the character
         gameObject.AddComponent<SCR_WeaponVisual>();
-        gameObject.GetComponent<SCR_WeaponVisual>().FileLocation = gun.WeaponLocation;
+        gameObject.GetComponent<SCR_WeaponVisual>().FileLocation = gun.WeaponFileLocation;
         gameObject.GetComponent<SCR_WeaponVisual>().Weapon = gun;
+       
     }
 
 }

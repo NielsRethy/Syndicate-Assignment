@@ -8,11 +8,12 @@ public class SCR_Persuader : SCR_Weapon
     public SCR_Persuader()
     {
         ATTStatsIncrease = 10;
-        RateOfFire = 1;
-        Reload = 10;
-        WeaponLocation = "Models/Guns/PREF_Persuader";
+        WeaponFileLocation = "Models/Guns/PREF_Persuader";
+        WeaponFileIconLocation = "Textures/Persuader";
         Weapon = GunType.Persuader;
         Damage = 50;
+        Bullets = 0;
+        MaxBullets = 8;
     }
 
     public override void PickUp(SCR_Character ch)
