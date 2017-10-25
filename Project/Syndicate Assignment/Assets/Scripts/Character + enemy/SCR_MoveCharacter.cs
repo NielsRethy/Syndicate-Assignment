@@ -35,31 +35,39 @@ public class SCR_MoveCharacter : MonoBehaviour {
 
         //Pick a location where the players walk to
         //Other players follow and regroup when on location
-
-        if (GetComponent<SCR_VisualCharacter>().IsSelected)
+        if (!SCR_GameManager.PAUSE_GAME)
         {
-            if (Input.GetMouseButtonDown(0))
+
+
+            if (GetComponent<SCR_VisualCharacter>().IsSelected)
             {
-                RaycastHit hit;
-                if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100))
+                if (Input.GetMouseButtonDown(0))
                 {
-                    if (hit.transform.tag == "Ground")
+                    RaycastHit hit;
+                    if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100))
                     {
-                        GetComponent<NavMeshAgent>().destination = hit.point;
+                        if (hit.transform.tag == "Ground")
+                        {
+                            GetComponent<NavMeshAgent>().destination = hit.point;
+                        }
+
                     }
-                   
                 }
             }
+            else if (!GetComponent<SCR_VisualCharacter>().IsSelected && _group)
+            {
+                GetComponent<NavMeshAgent>().destination =
+                    _walkingPoints.transform.GetComponentsInChildren<Transform>()[
+                        GetComponent<SCR_VisualCharacter>().Character.Id].position;
+
+
+            }
+
         }
-        else if (!GetComponent<SCR_VisualCharacter>().IsSelected && _group)
+        else
         {
-            GetComponent<NavMeshAgent>().destination =
-                _walkingPoints.transform.GetComponentsInChildren<Transform>()[
-                    GetComponent<SCR_VisualCharacter>().Character.Id].position;
-
-
+            GetComponent<NavMeshAgent>().destination = gameObject.transform.position;
         }
-
     }
 
 

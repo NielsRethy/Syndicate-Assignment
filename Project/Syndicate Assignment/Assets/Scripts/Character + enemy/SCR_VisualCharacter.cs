@@ -10,8 +10,6 @@ public class SCR_VisualCharacter : MonoBehaviour
 
     private GameObject _text;
     private bool _isSelected = false;
- 
-
     public bool IsSelected
     {
         get { return _isSelected; }
@@ -30,13 +28,12 @@ public class SCR_VisualCharacter : MonoBehaviour
 
     void Start()
     {
-        //adding components to character
+        //adding text above character
         AddTextMesh();
-        gameObject.AddComponent<NavMeshAgent>();
-        gameObject.AddComponent<SCR_MoveCharacter>();
 
-        Character.WeaponList.Add(new SCR_HandGun());
-        Character.WeaponList.Add(new SCR_Persuader());
+        Character.AddWeaponToList(new SCR_HandGun());
+        Character.AddWeaponToList(new SCR_Persuader());
+
 
         SetWeaponActive(Character.WeaponList[0]);
 

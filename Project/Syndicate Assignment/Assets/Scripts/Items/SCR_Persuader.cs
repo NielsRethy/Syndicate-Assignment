@@ -9,7 +9,7 @@ public class SCR_Persuader : SCR_Weapon
     {
         ATTStatsIncrease = 10;
         WeaponFileLocation = "Models/Guns/PREF_Persuader";
-        WeaponFileIconLocation = "Textures/Persuader";
+        FileIconLocation = "Textures/Persuader";
         Weapon = GunType.Persuader;
         Damage = 50;
         Bullets = 0;

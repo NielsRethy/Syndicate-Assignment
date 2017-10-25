@@ -11,7 +11,6 @@ public abstract class SCR_Weapon : SCR_Item
     public int ATTStatsIncrease = 10;
     public SCR_Character Character;
     public string WeaponFileLocation;
-    public string WeaponFileIconLocation;
     public int Damage;
 
     public enum GunType

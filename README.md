@@ -11,9 +11,9 @@ Working plan
 9)	Health							
 10)	Damage 	(WORKING ON)						
 11)	UI	(DONE)						
-12)	Inventory 						
+12)	Inventory (DONE)			
 13)	Items (pick up) (WORKING ON)					
-14)	Syndicate Panel																			
+14)	Syndicate Panel	(WORKING ON)																		
 16)	Extra: Making research for new weapons			
 17)	Extra: More levels 					
 18)	Extra: advance Syndicate Panel									

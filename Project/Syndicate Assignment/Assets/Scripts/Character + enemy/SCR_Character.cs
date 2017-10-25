@@ -19,15 +19,21 @@ public class SCR_Character {
         _name = name;
         _id = id;
 
-         // Spawn player 
-        GameObject capsuleObject = GameObject.CreatePrimitive(PrimitiveType.Capsule);
-        capsuleObject.tag = "Character";
-        capsuleObject.transform.position = GameObject.FindWithTag("Startlocation").transform.GetComponentsInChildren<Transform>()[_id].position;
-        VisualCharacter = capsuleObject.AddComponent<SCR_VisualCharacter>();
-        VisualCharacter.Character = this;
+        // Spawn player 
+        GameObject.FindWithTag("GameManager").GetComponent<SCR_GameManager>().CreatePlayer(_id, ref VisualCharacter,this);
 
     }
 
+    public void AddWeaponToList(SCR_Weapon w)
+    {
+        w.UpdateList(true);
+        WeaponList.Add(w);
+    }
+    public void RemoveWeaponFromList(SCR_Weapon w)
+    {
+        w.UpdateList(false);
+        WeaponList.Remove(w);
+    }
     public bool IsSelected
     {
         get { return _isSelected; }
@@ -39,7 +45,7 @@ public class SCR_Character {
     }
 
 
-    public SCR_VisualCharacter VisualCharacter { get; set ; }
+    public SCR_VisualCharacter VisualCharacter;
 
     public int Id
     {
@@ -53,7 +59,6 @@ public class SCR_Character {
         set
         {
             _activeWeapon = value;
-            //VisualCharacter.AddWeapon();
         }
     }
 

@@ -6,19 +6,6 @@ public class SCR_VisualEnemy : MonoBehaviour {
 
     // Use this for initialization
     public SCR_Enemy Enemy;
-    void Start ()
-	{
-        //adding components to enemy
-	    gameObject.AddComponent<BoxCollider>();
-	    gameObject.AddComponent<Rigidbody>();
-	    gameObject.GetComponent<MeshRenderer>().material.color= Color.blue;
-	    gameObject.tag = "Enemy";
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     public void Hit(int damage)
     {

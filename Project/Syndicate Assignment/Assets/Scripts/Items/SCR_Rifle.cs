@@ -9,7 +9,7 @@ public class SCR_Rifle : SCR_Weapon
     {
         ATTStatsIncrease = 10;
         WeaponFileLocation = "Models/Guns/PREF_Rifle";
-        WeaponFileIconLocation = "Textures/Rifle";
+        FileIconLocation = "Textures/Rifle";
         Weapon = GunType.Rifle;
         Damage = 100;
         Bullets = 0;
