@@ -47,7 +47,7 @@ public class SCR_InventoryPanel : SCR_SyndicatePanel
     void ShowInventoryIcons()
     {
         //updating inventory icons only when inventory is open
-        if (_inventoryList.ItemList.Count < IconList.Count)
+        if (_inventoryList.ItemList.Count <= IconList.Count)
         {
             for (int i = 0; i < _inventoryList.ItemList.Count; i++)
             {

@@ -32,9 +32,6 @@ public class SCR_VisualCharacter : MonoBehaviour
         AddTextMesh();
 
         Character.AddWeaponToList(new SCR_HandGun());
-        Character.AddWeaponToList(new SCR_Persuader());
-
-
         SetWeaponActive(Character.WeaponList[0]);
 
     }

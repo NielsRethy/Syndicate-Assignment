@@ -231,6 +231,8 @@
     <Compile Include="Assets\Scripts\Items\SCR_HandGun.cs" />
     <Compile Include="Assets\Scripts\Items\SCR_Inventory.cs" />
     <Compile Include="Assets\Scripts\Items\SCR_Item.cs" />
+    <Compile Include="Assets\Scripts\Items\SCR_ItemPickUp.cs" />
+    <Compile Include="Assets\Scripts\Items\SCR_Medkit.cs" />
     <Compile Include="Assets\Scripts\Items\SCR_Persuader.cs" />
     <Compile Include="Assets\Scripts\Items\SCR_Rifle.cs" />
     <Compile Include="Assets\Scripts\Items\SCR_Weapon.cs" />

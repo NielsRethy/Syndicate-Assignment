@@ -12,17 +12,19 @@ public class SCR_Inventory
         get { return _itemList; }
     }
 
-    public void AddItemToList(SCR_Item item)
+    public bool AddItemToList(SCR_Item item)
     {
         //adding items to the inventory list
         if (ItemList.Count < maxItems)
         {
             ItemList.Add(item);
+            return true;
         }
-        
+        return false;
     }
     public void RemoveItemToList(SCR_Item item)
     {
+
         //Removing items fron the inventory list
         ItemList.Remove(item);
     }

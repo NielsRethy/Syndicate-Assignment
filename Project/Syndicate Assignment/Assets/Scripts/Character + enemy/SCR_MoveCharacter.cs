@@ -23,7 +23,7 @@ public class SCR_MoveCharacter : MonoBehaviour {
     {
         PickNewWalkingLocation();
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetKeyDown(KeyCode.G))
         {
             //Going solo or stay with a group
             _group = !_group;
