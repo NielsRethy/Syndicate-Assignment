@@ -16,6 +16,7 @@ TagManager:
   - Character
   - Inventory
   - GameManager
+  - PlayerIcon
   layers:
   - Default
   - TransparentFX

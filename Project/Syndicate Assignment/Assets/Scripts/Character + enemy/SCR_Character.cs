@@ -7,6 +7,7 @@ public class SCR_Character {
 	// Use this for initialization
 
     private string _name;
+    public int Health = 100;
     public int ATTStats;
     private SCR_Weapon _activeWeapon;
     public List<SCR_Weapon> WeaponList = new List<SCR_Weapon>();

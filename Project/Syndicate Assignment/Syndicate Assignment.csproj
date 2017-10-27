@@ -221,6 +221,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Character + enemy\SCR_Character.cs" />
     <Compile Include="Assets\Scripts\Character + enemy\SCR_Enemy.cs" />
+    <Compile Include="Assets\Scripts\Character + enemy\SCR_EnemyAttack.cs" />
     <Compile Include="Assets\Scripts\Character + enemy\SCR_MoveCharacter.cs" />
     <Compile Include="Assets\Scripts\Character + enemy\SCR_VisualCharacter.cs" />
     <Compile Include="Assets\Scripts\Character + enemy\SCR_VisualEnemy.cs" />

@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class SCR_MoveCharacter : MonoBehaviour {
 
     private GameObject _walkingPoints;
-    private bool _group = true;
+    public bool IsGroup = true;
 
     void Start()
     {
@@ -26,7 +26,7 @@ public class SCR_MoveCharacter : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.G))
         {
             //Going solo or stay with a group
-            _group = !_group;
+            IsGroup = !IsGroup;
         }
     }
 
@@ -54,7 +54,7 @@ public class SCR_MoveCharacter : MonoBehaviour {
                     }
                 }
             }
-            else if (!GetComponent<SCR_VisualCharacter>().IsSelected && _group)
+            else if (!GetComponent<SCR_VisualCharacter>().IsSelected && IsGroup)
             {
                 GetComponent<NavMeshAgent>().destination =
                     _walkingPoints.transform.GetComponentsInChildren<Transform>()[
@@ -69,6 +69,8 @@ public class SCR_MoveCharacter : MonoBehaviour {
             GetComponent<NavMeshAgent>().destination = gameObject.transform.position;
         }
     }
+
+   
 
 
 }

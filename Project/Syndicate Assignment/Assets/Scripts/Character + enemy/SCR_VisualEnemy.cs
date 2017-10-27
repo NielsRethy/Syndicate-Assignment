@@ -6,9 +6,26 @@ public class SCR_VisualEnemy : MonoBehaviour {
 
     // Use this for initialization
     public SCR_Enemy Enemy;
+    private GameObject _player;
+    public bool CanAttack = false;
+    private bool _underAttack = false;
 
-    public void Hit(int damage)
+    void Update()
     {
+        if (CanAttack)
+        {
+            if (_player != null)
+            {
+                GetComponent<SCR_EnemyAttack>().AttackPlayer(_player);
+            }
+            
+        }
+    }
+
+    public void Hit(int damage, GameObject player)
+    {
+        CanAttack = true;
+        _player = player;
         StartCoroutine(ChangeColorWhenHit());
         //If the enemy is hit , take damage
         if (Enemy.Health <= 0.0f)

@@ -1,9 +1,13 @@
 INFO
 
 Left mouse button: move players to that position, shooting when mouse is on enemy (cursor change to hitmark)
+
 Right mouse button: select active character in group (mouse must be on 1 of the characters)
+
 Middle mouse scroll: Change between weapons (if you have more than 1) 
+
 Key I: Open/Close inventory
+
 Key G: Change from walking in group or solo
 
 

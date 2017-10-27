@@ -17,10 +17,7 @@ public class SCR_GameManager : MonoBehaviour
 	    _characterManager = new SCR_CharacterManager();
         _enemyManager = new SCR_EnemyManager();
         _uiManager = new SCR_UIManager();
-        Inventory = new SCR_Inventory();;
-
-        
-
+        Inventory = new SCR_Inventory();
     }
 
 
@@ -71,14 +68,11 @@ public class SCR_GameManager : MonoBehaviour
 
     public void CreateEnemy(int id,ref SCR_VisualEnemy ve, SCR_Enemy enemy)
     {
-
-        GameObject boxObject = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        boxObject.transform.position = GameObject.FindWithTag("StartlocationEnemy").transform.GetComponentsInChildren<Transform>()[id].position;
-        ve = boxObject.AddComponent<SCR_VisualEnemy>(); ;
+        //creating enemy + adding some extra components
+        GameObject enemyObject = Instantiate(Resources.Load("Models/Characters/PREF_Enemy")) as GameObject;
+        enemyObject.transform.position = GameObject.FindWithTag("StartlocationEnemy").transform.GetComponentsInChildren<Transform>()[id].position;
+        ve = enemyObject.AddComponent<SCR_VisualEnemy>(); ;
         ve.Enemy = enemy;
-        //adding components to enemy
-        ve.gameObject.AddComponent<BoxCollider>();
-        ve.gameObject.AddComponent<Rigidbody>();
         ve.gameObject.GetComponent<MeshRenderer>().material.color = Color.blue;
         ve.gameObject.tag = "Enemy";
     }

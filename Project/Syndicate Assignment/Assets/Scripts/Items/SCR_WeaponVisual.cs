@@ -25,6 +25,9 @@ public class SCR_WeaponVisual : MonoBehaviour
             _gunMesh.transform.localRotation = Quaternion.Euler(0.0f, -90.0f, 0.0f);
         }
         _hud = GameObject.FindWithTag("HUD");
+
+        Weapon.AddBullets(10);
+        UpdateBullets();
     }
 
     void Update()
@@ -40,15 +43,15 @@ public class SCR_WeaponVisual : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                if (GetComponent<SCR_VisualCharacter>().IsSelected)
+                if (GetComponent<SCR_MoveCharacter>().IsGroup || GetComponent<SCR_VisualCharacter>().IsSelected)
                 {
                     RaycastHit hit;
                     if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100))
                     {
                         if (hit.transform.tag == "Enemy")
                         {
-
-                            hit.transform.GetComponent<SCR_VisualEnemy>().Hit(Weapon.Damage);
+                            transform.LookAt(hit.transform);
+                            hit.transform.GetComponent<SCR_VisualEnemy>().Hit(Weapon.Damage, gameObject);
                             Weapon.Bullets -= 1;
                             _hud.GetComponent<SCR_HUD>().AmmoUpdate(GetComponentInParent<SCR_VisualCharacter>().Character.Id - 1,Weapon.Bullets);
                         }

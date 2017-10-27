@@ -75,6 +75,28 @@ public class SCR_VisualCharacter : MonoBehaviour
        
     }
 
+    public void UnderAttack(int damage)
+    {
+       
+        if (Character.Health > 0 )
+        {
+            StartCoroutine(ChangeColorWhenHit());
+            Character.Health -= damage;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    IEnumerator ChangeColorWhenHit()
+    {
+        GetComponent<Renderer>().material.color = Color.red;
+        yield return new WaitForSeconds(.1f);
+        GetComponent<Renderer>().material.color = Color.white;
+        yield return new WaitForSeconds(.1f);
+    }
+
 }
 
 

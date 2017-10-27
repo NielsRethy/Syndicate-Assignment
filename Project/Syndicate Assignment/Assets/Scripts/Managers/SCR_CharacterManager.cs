@@ -50,6 +50,8 @@ public class SCR_CharacterManager
                 _walkingPoints.transform.localPosition = _walkingPoints.transform.GetComponentsInChildren<Transform>()[vc.Character.Id].localPosition * -1;
                 _walkingPoints.transform.localRotation = new Quaternion(0.0f,0.0f,0.0f,0.0f);
 
+                //update HUD
+                GameObject.FindWithTag("HUD").GetComponent<SCR_HUD>().UpdateSelectedPLayer(_selectedCharacter.Id - 1);
             }
         }
 
