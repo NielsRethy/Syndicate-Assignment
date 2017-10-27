@@ -1,4 +1,4 @@
-INFO
+﻿INFO
 
 Controls 
 
@@ -38,11 +38,11 @@ You can walk through the level and shoot on enemy’s. If you shoot on the enemy
 If you shoot when you are walking solo only the selected character shoots. You can pick up items and ammo with the selected character. 
 There are three sorts of ammo, you can only pickup ammo if you have the correspondent weapon of it. A character can’t pick up 2 of the same weapons. 
 You need to switch characters if you want to have another character with the same weapon (there are 3 types of 
-weapons in the game so every character can have 3 weapons and switch between them). If your inventory is full you can’t pick up any items except ammo. 
+weapons in the game so every character can have 3 weapons and switch between them). If your inventory is full you can’t pick up any items except ammo.
+Ammo has a maximum to, you can only have 2 rifle bullets, 8 Persuader bullets and 20 hand gun bullets. 
 The enemies fire back if you attack them! They always attack the selected character first. You can die so be careful. 
 If you die you switch to another character. The not selected characters follow the selected character (ass you asked). 
 They regroup to a square formation when you are at your destination. 
-
 A list of features 
 
           •	You can walk through level if you click on the ground (left mouse button).
