@@ -4,37 +4,24 @@ using UnityEngine;
 
 public class SCR_Character {
 
-	// Use this for initialization
+    // ================================== 
+    // Character class: 
+    // ================================== 
+    //  - Holds the information of the Character
+    //  - Creating Character mesh (in GameManager)
+    //  - Adding/Removing weapons
+    // ----------------------------------
 
-    private string _name;
-    public int Health = 100;
-    public int ATTStats;
-    private SCR_Weapon _activeWeapon;
-    public List<SCR_Weapon> WeaponList = new List<SCR_Weapon>();
 
-    private bool _isSelected;
-    private int _id;
+    public string Name;                                             //Name of this character
+    public int Id;                                                  //ID of this character
+    public int Health = 100;                                        //Health of this character
+    public int ATTStats;                                            //ATTStats of this character
+    public SCR_Weapon ActiveWeapon;                                 //Active weapon
+    public List<SCR_Weapon> WeaponList = new List<SCR_Weapon>();    //List of weapons that it can use
+    public SCR_VisualCharacter VisualCharacter;                     //Visual class of this character
 
-    public SCR_Character(string name, int id)
-    {
-        _name = name;
-        _id = id;
-
-        // Spawn player 
-        GameObject.FindWithTag("GameManager").GetComponent<SCR_GameManager>().CreatePlayer(_id, ref VisualCharacter,this);
-
-    }
-
-    public void AddWeaponToList(SCR_Weapon w)
-    {
-        w.UpdateList(true);
-        WeaponList.Add(w);
-    }
-    public void RemoveWeaponFromList(SCR_Weapon w)
-    {
-        w.UpdateList(false);
-        WeaponList.Remove(w);
-    }
+    private bool _isSelected;                                       //Check if its the selected character
     public bool IsSelected
     {
         get { return _isSelected; }
@@ -45,22 +32,25 @@ public class SCR_Character {
         }
     }
 
-
-    public SCR_VisualCharacter VisualCharacter;
-
-    public int Id
+    public SCR_Character(string name, int id)
     {
-        get { return _id; }
-        set { _id = value; }
+        // Spawn player
+        Name = name;
+        Id = id; 
+        GameObject.FindWithTag("GameManager").GetComponent<SCR_GameManager>().CreatePlayer(Id, ref VisualCharacter,this);
+
+    }   
+    public void AddWeaponToList(SCR_Weapon w)
+    {
+        //adding weapon to its list
+        w.UpdateList(true);
+        WeaponList.Add(w);
     }
-
-    public SCR_Weapon ActiveWeapon
+    public void RemoveWeaponFromList(SCR_Weapon w)
     {
-        get { return _activeWeapon; }
-        set
-        {
-            _activeWeapon = value;
-        }
+        //Removing weapon from this list
+        w.UpdateList(false);
+        WeaponList.Remove(w);
     }
 
 

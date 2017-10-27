@@ -2,30 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SCR_Enemy
-{
+public class SCR_Enemy{
 
-    private int _health;
-    private int _id;
-    public SCR_VisualEnemy VisualEnemy;
+    // ================================== 
+    // Enemy class: 
+    // ================================== 
+    //  - Holds the information of the enemy
+    //  - Creating enemy mesh (in GameManager)
+    // ----------------------------------
 
-    public int Id
-    {
-        get { return _id; }
-        set { _id = value; }
-    }
-
-    public int Health
-    {
-        get { return _health; }
-        set { _health = value; }
-    }
+    public int Health = 100;                //Health of the enemy
+    public SCR_VisualEnemy VisualEnemy;     //The visual class of this enemy
 
     public SCR_Enemy(int id)
     {
         //spawn enemys
         GameObject.FindWithTag("GameManager").GetComponent<SCR_GameManager>().CreateEnemy(id, ref VisualEnemy, this);
-        _id = id;
         Health = 100;
     }
 }

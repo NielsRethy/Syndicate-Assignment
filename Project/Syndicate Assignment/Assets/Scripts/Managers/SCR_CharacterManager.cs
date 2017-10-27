@@ -1,19 +1,30 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SCR_CharacterManager
 {
+    // ================================== 
+    // Character manager class: 
+    // ================================== 
+    //  - Character manager
+    //  - Spawning characters
+    //  - Changing selected character
+    //  - Changing camera
+    //  - Spawning walk points
+    // ----------------------------------
 
-    private readonly List<SCR_Character> _charactersList = new List<SCR_Character>();
-    private SCR_Character _selectedCharacter;
-    private int _maxCharacters = 4;
-    private float _distanceCamera = 25;
-    private GameObject _walkingPoints;
+    private readonly List<SCR_Character> _charactersList = new List<SCR_Character>();       //Character list
+    public SCR_Character SelectedCharacter;                                                 //Selected character
+    private int _maxCharacters = 4;                                                         //Max character count
+    private float _distanceCamera = 25;                                                     //Camera distance
+    private GameObject _walkingPoints;                                                      //Walking points where the not selected characters walk to regroup
 
     public SCR_CharacterManager()
     {
         SettingWalkingPoints();
+        
         //First character is always the first selected
         if (_charactersList.Count < 4)
         {
@@ -22,11 +33,11 @@ public class SCR_CharacterManager
                 _charactersList.Add(new SCR_Character("Player" + (i + 1).ToString(), i + 1));
             }
         }
-        _selectedCharacter = _charactersList[0];
-        _selectedCharacter.IsSelected = true;
+        SelectedCharacter = _charactersList[0];
+        SelectedCharacter.IsSelected = true;
 
-
-        _walkingPoints.transform.parent = _selectedCharacter.VisualCharacter.gameObject.transform;
+        //Parenting the walking points to the selected player (walking points are there to have a formation)
+        _walkingPoints.transform.parent = SelectedCharacter.VisualCharacter.gameObject.transform;
     }
 
     public void ChangeSelectedCharacter()
@@ -40,9 +51,18 @@ public class SCR_CharacterManager
             if (hit.transform.gameObject.GetComponent<SCR_VisualCharacter>() != null)
             {
                 SCR_VisualCharacter vc = hit.transform.gameObject.GetComponent<SCR_VisualCharacter>();
-                _selectedCharacter.IsSelected = false;
-                _selectedCharacter = _charactersList[vc.Character.Id - 1];
-                vc.IsSelected = true;
+                SelectedCharacter.VisualCharacter.IsSelected = false;
+                SelectedCharacter.IsSelected = false;
+                foreach (var charac in _charactersList)
+                {
+                    if (charac == vc.Character)
+                    {
+                        SelectedCharacter = charac;
+                    }
+                }
+               
+                SelectedCharacter.VisualCharacter.IsSelected = true;
+                SelectedCharacter.IsSelected = true;
 
                 _walkingPoints.transform.parent = vc.gameObject.transform;
                 
@@ -51,7 +71,7 @@ public class SCR_CharacterManager
                 _walkingPoints.transform.localRotation = new Quaternion(0.0f,0.0f,0.0f,0.0f);
 
                 //update HUD
-                GameObject.FindWithTag("HUD").GetComponent<SCR_HUD>().UpdateSelectedPLayer(_selectedCharacter.Id - 1);
+                GameObject.FindWithTag("HUD").GetComponent<SCR_HUD>().UpdateSelectedPlayer(SelectedCharacter.Id - 1);
             }
         }
 
@@ -59,9 +79,11 @@ public class SCR_CharacterManager
 
     public void CameraFollowSelectedCharacter()
     {
-        Camera.main.transform.position = new Vector3(_selectedCharacter.VisualCharacter.transform.position.x,
+        //Camera folows selected player but doesnt rotate, always the same angle
+
+        Camera.main.transform.position = new Vector3(SelectedCharacter.VisualCharacter.transform.position.x,
             Camera.main.transform.position.y,
-            _selectedCharacter.VisualCharacter.transform.position.z - _distanceCamera);
+            SelectedCharacter.VisualCharacter.transform.position.z - _distanceCamera);
     }
 
     private void SettingWalkingPoints()
@@ -86,5 +108,29 @@ public class SCR_CharacterManager
         point2.transform.SetParent(_walkingPoints.transform);
         point3.transform.SetParent(_walkingPoints.transform);
         point4.transform.SetParent(_walkingPoints.transform);
+    }
+    public void NewSelectedCharacter(SCR_Character chr)
+    {
+        _charactersList.Remove(chr);
+        //Change character when player dies
+        if (_charactersList.Count > 0)
+        {
+            
+            SelectedCharacter = _charactersList[0];
+            SelectedCharacter.VisualCharacter.IsSelected = true;
+            _walkingPoints.transform.parent = SelectedCharacter.VisualCharacter.gameObject.transform;
+
+            //Reseting postions when the walkingpoints get a new parent object
+            _walkingPoints.transform.localPosition = _walkingPoints.transform.GetComponentsInChildren<Transform>()[SelectedCharacter.Id].localPosition * -1;
+            _walkingPoints.transform.localRotation = new Quaternion(0.0f, 0.0f, 0.0f, 0.0f);
+
+            //update HUD
+            GameObject.FindWithTag("HUD").GetComponent<SCR_HUD>().UpdateSelectedPlayer(SelectedCharacter.Id - 1);
+        }
+        else
+        {
+            //no players left? Quit game
+            Application.Quit();
+        }
     }
 }

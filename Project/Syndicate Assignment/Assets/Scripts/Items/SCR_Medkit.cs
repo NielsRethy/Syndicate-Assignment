@@ -4,9 +4,22 @@ using UnityEngine;
 
 public class SCR_Medkit : SCR_Item {
 
-	// Use this for initialization
+    // ================================== 
+    // Medkit item class: 
+    // ================================== 
+    //  - Information about this item
+    //  - Picking up medkit
+    // ----------------------------------
+
     public SCR_Medkit()
     {
+        //initialize Medkit
         FileIconLocation = "Textures/Medkit";
+        PickupObject = ItemType.Medkit;
+    }
+
+    public override void PickUp(SCR_Character ch)
+    {
+        //Picking up medkit
     }
 }

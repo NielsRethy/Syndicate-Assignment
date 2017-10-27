@@ -1,14 +1,18 @@
 INFO
 
-Left mouse button: move players to that position, shooting when mouse is on enemy (cursor change to hitmark)
+Controls 
 
-Right mouse button: select active character in group (mouse must be on 1 of the characters)
+Move:	Left mouse button on the ground
 
-Middle mouse scroll: Change between weapons (if you have more than 1) 
+Select other player: Right mouse button on character
 
-Key I: Open/Close inventory
+Switching between weapons (if you have more weapons): Scroll with the mouse scroll wheel
 
-Key G: Change from walking in group or solo
+Shoot on enemy: left mouse button (on enemy, you see an hitmark like in the Syndicate game) 
+
+Solo/regroup: Key G
+
+Inventory: Key I
 
 
 Working plan
@@ -19,11 +23,10 @@ Working plan
 4)	Switching between characters (DONE)			
 5)	Camera switching (DONE)
 6)	Characters follow + stay (DONE)				
-7)	Enemies (WORKING ON)
+7)	Enemies (DONE)
 8)	Weapons (DONE)						
-9)	Health	(WORKING ON)						
-10)	Damage 	(WORKING ON)						
-11)	UI	(DONE)						
-12)	Inventory (DONE)			
+9)	Health	(DONE)						
+10)	Damage 	(DONE)						
+11)	UI	(DONE)									
 13)	Items (pick up) (DONE)					
-14)	Syndicate Panel	(WORKING ON)																										
+14)	Syndicate Panel	Inventory (DONE)																										

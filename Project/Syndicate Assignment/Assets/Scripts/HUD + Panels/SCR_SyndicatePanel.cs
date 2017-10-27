@@ -4,24 +4,15 @@ using UnityEngine;
 
 public abstract class SCR_SyndicatePanel : MonoBehaviour {
 
-    //needs some work 
+    // ================================== 
+    // SyndicatePanel class: 
+    // ================================== 
+    // - Initialize
+    // - Refresh
+    // ----------------------------------
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public string Name;                     //panel name
 
-    public void Initialize()
-    {
-        
-    }
-    public void Refresh()
-    {
-
-    }
+    public virtual void Initialize(){}
+    public virtual void Refresh() {}
 }

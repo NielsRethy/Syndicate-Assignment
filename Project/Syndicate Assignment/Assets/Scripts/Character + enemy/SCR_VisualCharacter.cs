@@ -5,11 +5,19 @@ using UnityEngine.AI;
 
 public class SCR_VisualCharacter : MonoBehaviour
 {
+    // ================================== 
+    // Visual class of the character: 
+    // ================================== 
+    //  - Adding text mesh (above player) and facing it toward the camera
+    //  - Adding standard handgun 
+    //  - Changing active weapon
+    //  - Dealing damage to the player
+    //  - Changing color when hit
+    // ----------------------------------
 
-    public SCR_Character Character;
-
-    private GameObject _text;
-    private bool _isSelected = false;
+    public SCR_Character Character;         //Character class where al the info is stored
+    private GameObject _text;               //Text above the player (with the ID)
+    private bool _isSelected;               //Knowing if this character is the selected one
     public bool IsSelected
     {
         get { return _isSelected; }
@@ -28,9 +36,8 @@ public class SCR_VisualCharacter : MonoBehaviour
 
     void Start()
     {
-        //adding text above character
+        //adding text above character + giving spawn weapon (handgun)
         AddTextMesh();
-
         Character.AddWeaponToList(new SCR_HandGun());
         SetWeaponActive(Character.WeaponList[0]);
 
@@ -38,6 +45,7 @@ public class SCR_VisualCharacter : MonoBehaviour
 
     void Update()
     {
+        //Update text to face the camera
         TextFacingCamera();
     }
 
@@ -77,14 +85,16 @@ public class SCR_VisualCharacter : MonoBehaviour
 
     public void UnderAttack(int damage)
     {
-       
+       //Dealing damage to the character
         if (Character.Health > 0 )
         {
+            //changing color when hit
             StartCoroutine(ChangeColorWhenHit());
             Character.Health -= damage;
         }
         else
         {
+            GameObject.FindWithTag("GameManager").GetComponent<SCR_GameManager>().CharacterManager.NewSelectedCharacter(Character);
             Destroy(gameObject);
         }
     }

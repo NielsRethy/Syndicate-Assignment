@@ -437,9 +437,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullets: 3
-  HandGunAmmo: 0
-  RifleAmmo: 0
-  PersuaderAmmo: 1
+  IsHandGunAmmo: 0
+  IsRifleAmmo: 0
+  IsPersuaderAmmo: 1
 --- !u!65 &56585638
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -765,9 +765,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullets: 5
-  HandGunAmmo: 1
-  RifleAmmo: 0
-  PersuaderAmmo: 0
+  IsHandGunAmmo: 1
+  IsRifleAmmo: 0
+  IsPersuaderAmmo: 0
 --- !u!65 &93112710
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -869,7 +869,7 @@ RectTransform:
   m_Children:
   - {fileID: 2018533323}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1046,6 +1046,16 @@ Prefab:
       propertyPath: Bullets
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114798374902223958, guid: 3f52291b3cb8d7e44ac7571da3fd567d,
+        type: 2}
+      propertyPath: IsHandGunAmmo
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114798374902223958, guid: 3f52291b3cb8d7e44ac7571da3fd567d,
+        type: 2}
+      propertyPath: IsPersuaderAmmo
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_IsPrefabParent: 0
@@ -1113,9 +1123,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullets: 2
-  HandGunAmmo: 0
-  RifleAmmo: 1
-  PersuaderAmmo: 0
+  IsHandGunAmmo: 0
+  IsRifleAmmo: 1
+  IsPersuaderAmmo: 0
 --- !u!65 &127137849
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1323,7 +1333,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &152801067
 GameObject:
@@ -1555,6 +1565,16 @@ Prefab:
       propertyPath: Bullets
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114798374902223958, guid: 3f52291b3cb8d7e44ac7571da3fd567d,
+        type: 2}
+      propertyPath: IsHandGunAmmo
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114798374902223958, guid: 3f52291b3cb8d7e44ac7571da3fd567d,
+        type: 2}
+      propertyPath: IsPersuaderAmmo
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_IsPrefabParent: 0
@@ -1688,9 +1708,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullets: 3
-  HandGunAmmo: 0
-  RifleAmmo: 0
-  PersuaderAmmo: 1
+  IsHandGunAmmo: 0
+  IsRifleAmmo: 0
+  IsPersuaderAmmo: 1
 --- !u!65 &216198236
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1902,7 +1922,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4646970226213302, guid: 0c4c88c89b0a5fe468d8df7c341aca53, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4532469095361164, guid: 0c4c88c89b0a5fe468d8df7c341aca53, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3089,9 +3109,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullets: 5
-  HandGunAmmo: 1
-  RifleAmmo: 0
-  PersuaderAmmo: 0
+  IsHandGunAmmo: 1
+  IsRifleAmmo: 0
+  IsPersuaderAmmo: 0
 --- !u!65 &405143917
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3324,7 +3344,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &464553252
 Prefab:
@@ -3385,6 +3405,16 @@ Prefab:
         type: 2}
       propertyPath: Bullets
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114404678591362644, guid: 62a338e134e00ed4da21be648fe99828,
+        type: 2}
+      propertyPath: IsHandGunAmmo
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114404678591362644, guid: 62a338e134e00ed4da21be648fe99828,
+        type: 2}
+      propertyPath: IsRifleAmmo
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
@@ -3489,7 +3519,7 @@ GameObject:
   - component: {fileID: 474026413}
   - component: {fileID: 474026412}
   m_Layer: 5
-  m_Name: GunPLayer3
+  m_Name: GunPLayer4
   m_TagString: GunPLayer3UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3519,7 +3549,7 @@ RectTransform:
   - {fileID: 278587649}
   - {fileID: 965102152}
   m_Father: {fileID: 2018533323}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -3852,6 +3882,16 @@ Prefab:
       propertyPath: m_Name
       value: 'Pickup: BulletsRifle'
       objectReference: {fileID: 0}
+    - target: {fileID: 114045353888103806, guid: 3f52291b3cb8d7e44ac7571da3fd567d,
+        type: 2}
+      propertyPath: IsHandGunAmmo
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114045353888103806, guid: 3f52291b3cb8d7e44ac7571da3fd567d,
+        type: 2}
+      propertyPath: IsRifleAmmo
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3f52291b3cb8d7e44ac7571da3fd567d, type: 2}
   m_IsPrefabParent: 0
@@ -3914,6 +3954,16 @@ Prefab:
         type: 2}
       propertyPath: Bullets
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114404678591362644, guid: 62a338e134e00ed4da21be648fe99828,
+        type: 2}
+      propertyPath: IsHandGunAmmo
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114404678591362644, guid: 62a338e134e00ed4da21be648fe99828,
+        type: 2}
+      propertyPath: IsRifleAmmo
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
@@ -4144,6 +4194,16 @@ Prefab:
       propertyPath: Bullets
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114798374902223958, guid: 3f52291b3cb8d7e44ac7571da3fd567d,
+        type: 2}
+      propertyPath: IsHandGunAmmo
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114798374902223958, guid: 3f52291b3cb8d7e44ac7571da3fd567d,
+        type: 2}
+      propertyPath: IsPersuaderAmmo
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_IsPrefabParent: 0
@@ -4341,10 +4401,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55f00a0fea4e66749946d6af4352d00f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HandGun: 0
-  Rifle: 1
-  Persuader: 0
-  MedKit: 0
+  IsHandGun: 0
+  IsRifle: 1
+  IsPersuader: 0
+  IsMedKit: 0
 --- !u!65 &557092990
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4559,10 +4619,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55f00a0fea4e66749946d6af4352d00f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HandGun: 0
-  Rifle: 0
-  Persuader: 1
-  MedKit: 0
+  IsHandGun: 0
+  IsRifle: 0
+  IsPersuader: 1
+  IsMedKit: 0
 --- !u!1 &595718200
 GameObject:
   m_ObjectHideFlags: 0
@@ -4877,10 +4937,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55f00a0fea4e66749946d6af4352d00f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HandGun: 0
-  Rifle: 0
-  Persuader: 0
-  MedKit: 1
+  IsHandGun: 0
+  IsRifle: 0
+  IsPersuader: 0
+  IsMedKit: 1
 --- !u!65 &625215007
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5108,6 +5168,16 @@ Prefab:
     - target: {fileID: 4473974368551430, guid: b30b5067eb5402a48833d216b5e9a3bc, type: 2}
       propertyPath: m_RootOrder
       value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 114794398617758122, guid: b30b5067eb5402a48833d216b5e9a3bc,
+        type: 2}
+      propertyPath: IsHandGun
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114794398617758122, guid: b30b5067eb5402a48833d216b5e9a3bc,
+        type: 2}
+      propertyPath: IsPersuader
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b30b5067eb5402a48833d216b5e9a3bc, type: 2}
@@ -5822,6 +5892,16 @@ Prefab:
       propertyPath: Bullets
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114798374902223958, guid: 3f52291b3cb8d7e44ac7571da3fd567d,
+        type: 2}
+      propertyPath: IsHandGunAmmo
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114798374902223958, guid: 3f52291b3cb8d7e44ac7571da3fd567d,
+        type: 2}
+      propertyPath: IsPersuaderAmmo
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_IsPrefabParent: 0
@@ -5979,9 +6059,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullets: 3
-  HandGunAmmo: 0
-  RifleAmmo: 0
-  PersuaderAmmo: 1
+  IsHandGunAmmo: 0
+  IsRifleAmmo: 0
+  IsPersuaderAmmo: 1
 --- !u!65 &790492807
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6272,7 +6352,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &831777238 stripped
 GameObject:
@@ -6332,6 +6412,16 @@ Prefab:
     - target: {fileID: 4056204301214060, guid: db47ad7a2790b844cbfbc14d848da05f, type: 2}
       propertyPath: m_RootOrder
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114506710496901010, guid: db47ad7a2790b844cbfbc14d848da05f,
+        type: 2}
+      propertyPath: IsHandGun
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114506710496901010, guid: db47ad7a2790b844cbfbc14d848da05f,
+        type: 2}
+      propertyPath: IsRifle
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: db47ad7a2790b844cbfbc14d848da05f, type: 2}
@@ -6470,9 +6560,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullets: 5
-  HandGunAmmo: 1
-  RifleAmmo: 0
-  PersuaderAmmo: 0
+  IsHandGunAmmo: 1
+  IsRifleAmmo: 0
+  IsPersuaderAmmo: 0
 --- !u!65 &861764983
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7010,6 +7100,16 @@ Prefab:
       propertyPath: Bullets
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114798374902223958, guid: 3f52291b3cb8d7e44ac7571da3fd567d,
+        type: 2}
+      propertyPath: IsHandGunAmmo
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114798374902223958, guid: 3f52291b3cb8d7e44ac7571da3fd567d,
+        type: 2}
+      propertyPath: IsPersuaderAmmo
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_IsPrefabParent: 0
@@ -7161,6 +7261,16 @@ Prefab:
         type: 2}
       propertyPath: Bullets
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114404678591362644, guid: 62a338e134e00ed4da21be648fe99828,
+        type: 2}
+      propertyPath: IsHandGunAmmo
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114404678591362644, guid: 62a338e134e00ed4da21be648fe99828,
+        type: 2}
+      propertyPath: IsRifleAmmo
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
@@ -7365,10 +7475,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55f00a0fea4e66749946d6af4352d00f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HandGun: 0
-  Rifle: 0
-  Persuader: 0
-  MedKit: 1
+  IsHandGun: 0
+  IsRifle: 0
+  IsPersuader: 0
+  IsMedKit: 1
 --- !u!65 &952499653
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7513,9 +7623,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullets: 2
-  HandGunAmmo: 0
-  RifleAmmo: 1
-  PersuaderAmmo: 0
+  IsHandGunAmmo: 0
+  IsRifleAmmo: 1
+  IsPersuaderAmmo: 0
 --- !u!65 &954303780
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7782,7 +7892,7 @@ Transform:
   - {fileID: 1698162727}
   - {fileID: 501775696}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &974828118
 GameObject:
@@ -7916,6 +8026,16 @@ Prefab:
       propertyPath: m_Name
       value: 'Pickup: BulletsPersuader'
       objectReference: {fileID: 0}
+    - target: {fileID: 114088526436016240, guid: 62a338e134e00ed4da21be648fe99828,
+        type: 2}
+      propertyPath: IsHandGunAmmo
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114088526436016240, guid: 62a338e134e00ed4da21be648fe99828,
+        type: 2}
+      propertyPath: IsPersuaderAmmo
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 62a338e134e00ed4da21be648fe99828, type: 2}
   m_IsPrefabParent: 0
@@ -7972,10 +8092,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55f00a0fea4e66749946d6af4352d00f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HandGun: 0
-  Rifle: 0
-  Persuader: 1
-  MedKit: 0
+  IsHandGun: 0
+  IsRifle: 0
+  IsPersuader: 1
+  IsMedKit: 0
 --- !u!1001 &990402304
 Prefab:
   m_ObjectHideFlags: 0
@@ -8885,9 +9005,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullets: 2
-  HandGunAmmo: 0
-  RifleAmmo: 1
-  PersuaderAmmo: 0
+  IsHandGunAmmo: 0
+  IsRifleAmmo: 1
+  IsPersuaderAmmo: 0
 --- !u!65 &1179651260
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9467,10 +9587,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55f00a0fea4e66749946d6af4352d00f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HandGun: 0
-  Rifle: 0
-  Persuader: 1
-  MedKit: 0
+  IsHandGun: 0
+  IsRifle: 0
+  IsPersuader: 1
+  IsMedKit: 0
 --- !u!1 &1301783863
 GameObject:
   m_ObjectHideFlags: 0
@@ -9603,9 +9723,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullets: 3
-  HandGunAmmo: 0
-  RifleAmmo: 0
-  PersuaderAmmo: 1
+  IsHandGunAmmo: 0
+  IsRifleAmmo: 0
+  IsPersuaderAmmo: 1
 --- !u!65 &1309948503
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9657,6 +9777,16 @@ Prefab:
     - target: {fileID: 4827960202331854, guid: 8e054023dc918aa45af3f543da9f0b5b, type: 2}
       propertyPath: m_RootOrder
       value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 114187197886694878, guid: 8e054023dc918aa45af3f543da9f0b5b,
+        type: 2}
+      propertyPath: IsHandGun
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114187197886694878, guid: 8e054023dc918aa45af3f543da9f0b5b,
+        type: 2}
+      propertyPath: IsMedKit
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8e054023dc918aa45af3f543da9f0b5b, type: 2}
@@ -10023,9 +10153,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullets: 2
-  HandGunAmmo: 0
-  RifleAmmo: 1
-  PersuaderAmmo: 0
+  IsHandGunAmmo: 0
+  IsRifleAmmo: 1
+  IsPersuaderAmmo: 0
 --- !u!65 &1418320562
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10276,6 +10406,16 @@ Prefab:
         type: 2}
       propertyPath: Bullets
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114404678591362644, guid: 62a338e134e00ed4da21be648fe99828,
+        type: 2}
+      propertyPath: IsHandGunAmmo
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114404678591362644, guid: 62a338e134e00ed4da21be648fe99828,
+        type: 2}
+      propertyPath: IsRifleAmmo
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
@@ -10677,9 +10817,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullets: 3
-  HandGunAmmo: 0
-  RifleAmmo: 0
-  PersuaderAmmo: 1
+  IsHandGunAmmo: 0
+  IsRifleAmmo: 0
+  IsPersuaderAmmo: 1
 --- !u!65 &1477111113
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10918,7 +11058,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!1 &1494381770
 GameObject:
@@ -11121,9 +11261,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullets: 5
-  HandGunAmmo: 1
-  RifleAmmo: 0
-  PersuaderAmmo: 0
+  IsHandGunAmmo: 1
+  IsRifleAmmo: 0
+  IsPersuaderAmmo: 0
 --- !u!65 &1510623447
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11495,9 +11635,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullets: 3
-  HandGunAmmo: 0
-  RifleAmmo: 0
-  PersuaderAmmo: 1
+  IsHandGunAmmo: 0
+  IsRifleAmmo: 0
+  IsPersuaderAmmo: 1
 --- !u!65 &1549966522
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11571,6 +11711,16 @@ Prefab:
       propertyPath: Bullets
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114404678591362644, guid: 62a338e134e00ed4da21be648fe99828,
+        type: 2}
+      propertyPath: IsHandGunAmmo
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114404678591362644, guid: 62a338e134e00ed4da21be648fe99828,
+        type: 2}
+      propertyPath: IsRifleAmmo
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_IsPrefabParent: 0
@@ -11638,9 +11788,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullets: 2
-  HandGunAmmo: 0
-  RifleAmmo: 1
-  PersuaderAmmo: 0
+  IsHandGunAmmo: 0
+  IsRifleAmmo: 1
+  IsPersuaderAmmo: 0
 --- !u!65 &1575415782
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11821,7 +11971,7 @@ GameObject:
   - component: {fileID: 1618161797}
   - component: {fileID: 1618161796}
   m_Layer: 5
-  m_Name: GunPLayer4
+  m_Name: GunPLayer3
   m_TagString: GunPLayer4UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11851,7 +12001,7 @@ RectTransform:
   - {fileID: 1497360949}
   - {fileID: 1541330810}
   m_Father: {fileID: 2018533323}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -12334,9 +12484,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullets: 5
-  HandGunAmmo: 1
-  RifleAmmo: 0
-  PersuaderAmmo: 0
+  IsHandGunAmmo: 1
+  IsRifleAmmo: 0
+  IsPersuaderAmmo: 0
 --- !u!65 &1690364924
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12857,9 +13007,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullets: 2
-  HandGunAmmo: 0
-  RifleAmmo: 1
-  PersuaderAmmo: 0
+  IsHandGunAmmo: 0
+  IsRifleAmmo: 1
+  IsPersuaderAmmo: 0
 --- !u!65 &1713934989
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13610,7 +13760,7 @@ Transform:
   - {fileID: 625215005}
   - {fileID: 952499651}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1875813242 stripped
 GameObject:
@@ -13633,10 +13783,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55f00a0fea4e66749946d6af4352d00f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HandGun: 0
-  Rifle: 1
-  Persuader: 0
-  MedKit: 0
+  IsHandGun: 0
+  IsRifle: 1
+  IsPersuader: 0
+  IsMedKit: 0
 --- !u!65 &1875813245
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13920,52 +14070,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4473974368551430, guid: b30b5067eb5402a48833d216b5e9a3bc,
     type: 2}
   m_PrefabInternal: {fileID: 663963829}
---- !u!1001 &1954229458
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4536505795833224, guid: c01e08b39b2d1de4fbf3587aeef50874, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 19.120773
-      objectReference: {fileID: 0}
-    - target: {fileID: 4536505795833224, guid: c01e08b39b2d1de4fbf3587aeef50874, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 39.38499
-      objectReference: {fileID: 0}
-    - target: {fileID: 4536505795833224, guid: c01e08b39b2d1de4fbf3587aeef50874, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -37.87406
-      objectReference: {fileID: 0}
-    - target: {fileID: 4536505795833224, guid: c01e08b39b2d1de4fbf3587aeef50874, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4536505795833224, guid: c01e08b39b2d1de4fbf3587aeef50874, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4536505795833224, guid: c01e08b39b2d1de4fbf3587aeef50874, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4536505795833224, guid: c01e08b39b2d1de4fbf3587aeef50874, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4536505795833224, guid: c01e08b39b2d1de4fbf3587aeef50874, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1987253836609930, guid: c01e08b39b2d1de4fbf3587aeef50874, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: c01e08b39b2d1de4fbf3587aeef50874, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1957215506
 GameObject:
   m_ObjectHideFlags: 0
@@ -14180,8 +14284,8 @@ RectTransform:
   - {fileID: 609722748}
   - {fileID: 1492405845}
   - {fileID: 1371821373}
-  - {fileID: 474026411}
   - {fileID: 1618161795}
+  - {fileID: 474026411}
   - {fileID: 52630808}
   m_Father: {fileID: 108500066}
   m_RootOrder: 0
@@ -14528,6 +14632,16 @@ Prefab:
       propertyPath: Bullets
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114404678591362644, guid: 62a338e134e00ed4da21be648fe99828,
+        type: 2}
+      propertyPath: IsHandGunAmmo
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114404678591362644, guid: 62a338e134e00ed4da21be648fe99828,
+        type: 2}
+      propertyPath: IsRifleAmmo
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_IsPrefabParent: 0
@@ -14756,6 +14870,16 @@ Prefab:
         type: 2}
       propertyPath: Bullets
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114798374902223958, guid: 3f52291b3cb8d7e44ac7571da3fd567d,
+        type: 2}
+      propertyPath: IsHandGunAmmo
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114798374902223958, guid: 3f52291b3cb8d7e44ac7571da3fd567d,
+        type: 2}
+      propertyPath: IsPersuaderAmmo
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

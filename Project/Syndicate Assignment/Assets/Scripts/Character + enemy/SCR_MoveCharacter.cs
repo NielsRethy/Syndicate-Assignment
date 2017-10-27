@@ -5,8 +5,16 @@ using UnityEngine.AI;
 
 public class SCR_MoveCharacter : MonoBehaviour {
 
-    private GameObject _walkingPoints;
-    public bool IsGroup = true;
+    // ================================== 
+    // Move class of the character: 
+    // ================================== 
+    //  - Picking new location to walk to
+    //  - Moving character to new location
+    //  - switiching between walking in group or walking solo
+    // ----------------------------------
+
+    private GameObject _walkingPoints;      //Walking points that the not selected characters walks to
+    public bool IsGroup = true;             //Checking if the player walks in group or solo
 
     void Start()
     {
@@ -18,11 +26,9 @@ public class SCR_MoveCharacter : MonoBehaviour {
                 .position;
     }
 
-    // Update is called once per frame
     void Update()
     {
         PickNewWalkingLocation();
-
         if (Input.GetKeyDown(KeyCode.G))
         {
             //Going solo or stay with a group
@@ -37,8 +43,6 @@ public class SCR_MoveCharacter : MonoBehaviour {
         //Other players follow and regroup when on location
         if (!SCR_GameManager.PAUSE_GAME)
         {
-
-
             if (GetComponent<SCR_VisualCharacter>().IsSelected)
             {
                 if (Input.GetMouseButtonDown(0))
@@ -59,8 +63,6 @@ public class SCR_MoveCharacter : MonoBehaviour {
                 GetComponent<NavMeshAgent>().destination =
                     _walkingPoints.transform.GetComponentsInChildren<Transform>()[
                         GetComponent<SCR_VisualCharacter>().Character.Id].position;
-
-
             }
 
         }

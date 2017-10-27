@@ -5,14 +5,18 @@ using UnityEngine;
 
 public class SCR_WeaponVisual : MonoBehaviour
 {
+    // ================================== 
+    // Weapon visual class: 
+    // ================================== 
+    //  - Shooting on enemy
+    //  - Changing the gun
+    //  - Updating bullets on the HUD
+    // ----------------------------------
 
-    // Use this for initialization
-    public string FileLocation;
-
-    public SCR_Weapon Weapon;
-
-    private GameObject _gunMesh;
-    private GameObject _hud;
+    public string FileLocation;             //Location of prefab file (in recource folder)
+    public SCR_Weapon Weapon;               //Weapon 
+    private GameObject _gunMesh;            //Mesh of the weapon
+    private GameObject _hud;                //Reference to the HUD
 
     void Start()
     {
@@ -26,6 +30,7 @@ public class SCR_WeaponVisual : MonoBehaviour
         }
         _hud = GameObject.FindWithTag("HUD");
 
+        //starting with 10 bullets
         Weapon.AddBullets(10);
         UpdateBullets();
     }
@@ -38,11 +43,12 @@ public class SCR_WeaponVisual : MonoBehaviour
 
     private void ShootOnEnemy()
     {
-        //shooting on enemy if mouse is on the target
+        //shooting on enemy if mouse is on the target and the weapon has bullets
         if (Weapon.Bullets > 0)
         {
             if (Input.GetMouseButtonDown(0))
             {
+                //When your in a group evry character shoots, when solo only the selected shoot
                 if (GetComponent<SCR_MoveCharacter>().IsGroup || GetComponent<SCR_VisualCharacter>().IsSelected)
                 {
                     RaycastHit hit;
@@ -64,30 +70,27 @@ public class SCR_WeaponVisual : MonoBehaviour
 
     private void ChangeGun()
     {
-
         //changing gun with mouse scroll wheel
         if (GetComponentInParent<SCR_VisualCharacter>().IsSelected)
         {
             var d = Input.GetAxis("Mouse ScrollWheel");
             if (d > 0 || d < 0f)
             {
-
                 Destroy(_gunMesh);
                 SwitchWeapon();
-                //Spawning gun object at the right location
+                //Spawning gun object (code in GameManager)
                 GameObject.FindWithTag("GameManager").GetComponent<SCR_GameManager>().CreateGun(ref _gunMesh, Weapon, this.gameObject);
 
                 //Updating HUD
                 _hud.GetComponent<SCR_HUD>().AmmoUpdate(GetComponentInParent<SCR_VisualCharacter>().Character.Id - 1, Weapon.Bullets);
                 _hud.GetComponent<SCR_HUD>().SetNewWeaponIcon(GetComponentInParent<SCR_VisualCharacter>().Character.Id - 1, Weapon.FileIconLocation);
-
-
             }
         }
     }
 
     private void SwitchWeapon()
     {
+        //looking in gun list and switching if there are more weapons
         for (int i = 0; i < GetComponentInParent<SCR_VisualCharacter>().Character.WeaponList.Count; i++)
         {
             if (Weapon.Weapon == GetComponentInParent<SCR_VisualCharacter>().Character.WeaponList[i].Weapon)
@@ -97,16 +100,14 @@ public class SCR_WeaponVisual : MonoBehaviour
                     Weapon = GetComponentInParent<SCR_VisualCharacter>().Character.WeaponList[i + 1];
                     return;
                 }
-                else
-                {
-                    Weapon = GetComponentInParent<SCR_VisualCharacter>().Character.WeaponList[0];
-;                }
+                Weapon = GetComponentInParent<SCR_VisualCharacter>().Character.WeaponList[0];
             }
         }
     }
 
     public void UpdateBullets()
     {
+        //Update HUD for the bullets
         _hud.GetComponent<SCR_HUD>().AmmoUpdate(GetComponentInParent<SCR_VisualCharacter>().Character.Id - 1, Weapon.Bullets);
     }
 

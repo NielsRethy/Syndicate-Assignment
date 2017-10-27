@@ -5,15 +5,34 @@ using UnityEngine.UI;
 
 public class SCR_HUD : MonoBehaviour
 {
+    // ================================== 
+    // HUD class: 
+    // ================================== 
+    //  - Update information on the HUD
+    // ----------------------------------
 
     // Use this for initialization
-    private List<List<GameObject>> _playersBulletsHUD = new List<List<GameObject>>();
-    private List<GameObject> _playerGunHUD = new List<GameObject>();
-    private List<GameObject> _playerIconHUD = new List<GameObject>();
-
-    //private int bulletCount = 8;
-
+    private List<List<GameObject>> _playersBulletsHUD = new List<List<GameObject>>();       //List of a list that holds the icon objects for the bulets on the HUD (4 players = 4 list of bullets)
+    private List<GameObject> _playerGunHUD = new List<GameObject>();                        //List of the gun icons on the HUD
+    private List<GameObject> _playerIconHUD = new List<GameObject>();                       //List of the player icon on the HUD
+    private int _characterCount = 4;                                                        //Characters in game
     void Start()
+    {
+        //ordering icons in right list
+        OrderingIcons();
+
+        //Resetting bullets so every icon is not active
+        for (int a = 0; a < _playersBulletsHUD.Count; a++)
+        {
+            for (int b = 0; b < _playersBulletsHUD[a].Count; b++)
+            {
+                _playersBulletsHUD[a][b].SetActive(false);
+            }
+        }
+
+    }
+
+    public void OrderingIcons()
     {
         //Getting HUD informtion
 
@@ -23,13 +42,20 @@ public class SCR_HUD : MonoBehaviour
         var UIP4 = GameObject.FindWithTag("GunPLayer4UI");
         var playerIcons = GameObject.Find("PlayerIcon");
 
+        //Sorting all the icons in the right list (0 = gun background, 1 = gun texture, 2-13 = bullets
+
+        //==============
+        //GunIcon
+        //==============
         _playerGunHUD.Add(UIP1.GetComponentsInChildren<Transform>()[1].gameObject);
         _playerGunHUD.Add(UIP2.GetComponentsInChildren<Transform>()[1].gameObject);
         _playerGunHUD.Add(UIP3.GetComponentsInChildren<Transform>()[1].gameObject);
         _playerGunHUD.Add(UIP4.GetComponentsInChildren<Transform>()[1].gameObject);
 
-        //Storing gun texture (0 = gun background, 1 = gun texture, 2-13 = bullets
-        for (int i = 0; i < 4; i++)
+        //==============
+        //BulletsIcons
+        //==============
+        for (int i = 0; i < _characterCount; i++)
         {
             _playersBulletsHUD.Add(new List<GameObject>());
 
@@ -51,55 +77,42 @@ public class SCR_HUD : MonoBehaviour
         {
             _playersBulletsHUD[3].Add(UIP4.GetComponentsInChildren<Transform>()[i].gameObject);
         }
+
+        //==============
+        //PlayerIcons
+        //==============
         for (int i = 1; i < playerIcons.GetComponentsInChildren<Transform>().Length; i++)
         {
             _playerIconHUD.Add(playerIcons.GetComponentsInChildren<Transform>()[i].gameObject);
         }
 
-        //Setting Bullets on 0
-        for (int a = 0; a < _playersBulletsHUD.Count; a++)
-        {
-            for (int b = 0; b < _playersBulletsHUD[a].Count; b++)
-            {
-                _playersBulletsHUD[a][b].SetActive(false);
-
-            }
-        }
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void AmmoUpdate(int player, int AmmoCount)
     {
-
         //Updating Bullets on HUD
+
+        //dissable every one
         for (int i = 0; i < _playersBulletsHUD[player].Count; i++)
         {
             _playersBulletsHUD[player][i].SetActive(false);
-
         }
-
-        //Updating Bullets on HUD
+        //enable correct amount
         for (int i = 0; i < AmmoCount; i++)
         {
             _playersBulletsHUD[player][i].SetActive(true);
-
         }
     }
 
     public void SetNewWeaponIcon(int player, string iconLocation)
     {
-        var t = new Texture();
+        //Updating weapon icon to the correct one
         _playerGunHUD[player].GetComponent<RawImage>().texture = Resources.Load<Texture>(iconLocation);
     }
 
-    public void UpdateSelectedPLayer(int player)
+    public void UpdateSelectedPlayer(int player)
     {
+        //Updating selected player to highlight (change color) 
         for (int i = 0; i < _playerIconHUD.Count; i++)
         {
             if (i == player )

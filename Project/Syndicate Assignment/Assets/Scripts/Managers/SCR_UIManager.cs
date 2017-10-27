@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class SCR_UIManager
 {
-    //need some work
-    public GameObject InventoryPanel = new GameObject();
+    // ================================== 
+    // UI manager class: 
+    // ================================== 
+    //  - UI manager
+    //  - Making inventory panel
+    // ----------------------------------
+
+    public List<SCR_SyndicatePanel> Panels = new List<SCR_SyndicatePanel>();     //List of active panels
+
     public SCR_UIManager()
     {
         //making inventory
-        InventoryPanel = GameObject.Instantiate(Resources.Load("Models/Panels/PREF_Inventory")) as GameObject;
-
+        var inventoryPanel = GameObject.Instantiate(Resources.Load("Models/Panels/PREF_Inventory")) as GameObject;
+        if (inventoryPanel != null) Panels.Add(inventoryPanel.GetComponent<SCR_InventoryPanel>());
     }
 }
