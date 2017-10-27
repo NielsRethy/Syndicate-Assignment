@@ -44,6 +44,7 @@ If you die you switch to another character. The not selected characters follow t
 They regroup to a square formation when you are at your destination. 
 
 A list of features 
+
           •	You can walk through level if you click on the ground (left mouse button).
 
           •	Changing character with the right mouse button. Just click on 1 of the 4 characters.
